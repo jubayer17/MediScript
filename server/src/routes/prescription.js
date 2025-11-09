@@ -5,19 +5,17 @@ import {
   updatePrescription,
   deletePrescription,
   getDayWiseReport,
-  getAllPrescriptions,
 } from "../controllers/prescriptionController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-// all routes are protected
 router.use(protect);
 
-router.get("/", getPrescriptions); // list prescriptions (date filter optional)
-router.post("/", createPrescription); // create new
-router.put("/:id", updatePrescription); // update
-router.delete("/:id", deletePrescription); // delete
-router.get("/report/daywise", getDayWiseReport); // day-wise count
-router.get("/all", getAllPrescriptions);
+router.get("/", getPrescriptions);
+router.post("/", createPrescription);
+router.put("/:id", updatePrescription);
+router.delete("/:id", deletePrescription);
+router.get("/report/daywise", getDayWiseReport);
+
 export default router;

@@ -15,7 +15,7 @@ export async function GET(request) {
     }
 
     // Fetch from backend with token
-    const res = await fetch("http://localhost:5000/api/v1/prescriptions/all", {
+    const res = await fetch("http://localhost:5000/api/v1/prescriptions", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

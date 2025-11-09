@@ -154,18 +154,3 @@ export const getDayWiseReport = async (req, res) => {
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
-
-// GET /api/v1/prescriptions
-export const getAllPrescriptions = async (req, res) => {
-  try {
-    const prescriptions = await Prescription.findAll({
-      where: { userId: req.user.id },
-      order: [["prescriptionDate", "DESC"]],
-    });
-
-    res.json(prescriptions);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server error", error: error.message });
-  }
-};

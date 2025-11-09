@@ -12,7 +12,7 @@ export default function PrescriptionPage() {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          "http://localhost:3000/api/v1/prescriptions/all"
+          "http://localhost:3000/api/v1/prescriptions"
         );
         const data = await res.json();
         setPrescriptions(data);

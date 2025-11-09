@@ -16,7 +16,7 @@ export default function PrescriptionDataPage() {
       try {
         setLoading(true);
         const res = await fetch(
-          "http://localhost:3000/api/v1/prescriptions/all"
+          "http://localhost:3000/api/v1/prescriptions"
         );
 
         if (!res.ok) {
